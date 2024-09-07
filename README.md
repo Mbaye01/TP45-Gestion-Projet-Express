@@ -40,6 +40,14 @@ npm install express
 npm install body-parser
 ```
 
+**Utilisation**
+
+Pour démarrer l'application, exécutez la commande suivante :
+
+```bash
+npm start
+```
+
 [UML](./assets/UML_modele.png)
 
 ### Fonctionnalités
