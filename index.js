@@ -72,23 +72,32 @@ app.get("/app", (req, res) => {
     statut: "A faire",
     priorite: "Basse",
   });
-  console.log("**************")
-  // Assignation.assign({employe: e1.getEmp(), tache: t1.getTache(), dateAssignation: new Date()})
-  // Assignation.assign({employe: e1.getEmp(), tache: t2.getTache(), dateAssignation: new Date()})
-  // Assignation.assign({employe: e2.getEmp(), tache: t1.getTache(), dateAssignation: new Date()})
-  Assignation.assign({employe: e1.getEmp(), tache: t3.getTache(), dateAssignation: new Date()})
-  Assignation.assign({employe: e2.getEmp(), tache: t2.getTache(), dateAssignation: new Date()})
+  console.log("**************");
+  Assignation.assign({
+    employe: e1.getEmp(),
+    tache: t3.getTache(),
+    dateAssignation: new Date(),
+  });
+  Assignation.assign({
+    employe: e2.getEmp(),
+    tache: t2.getTache(),
+    dateAssignation: new Date(),
+  });
 
-  const assignation = Assignation.getTab()
+  const assignation = Assignation.getTab();
   const resulFiltre = Assignation.getEmpAssign(e1.getEmp());
 
-  const newAssignation = Assignation.getTab()
+  const newAssignation = Assignation.getTab();
 
-  Assignation.assign({employe: e2.getEmp(), tache: t1.getTache(), dateAssignation: new Date()})
+  Assignation.assign({
+    employe: e2.getEmp(),
+    tache: t1.getTache(),
+    dateAssignation: new Date(),
+  });
 
-  const testEcrase = Assignation.getTab()
-  
-  res.status(200).json({newAssignation, testEcrase, resulFiltre});
+  const testEcrase = Assignation.getTab();
+
+  res.status(200).json({ newAssignation, testEcrase, resulFiltre });
 });
 
 app.listen(port, () => {
